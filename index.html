@@ -80,6 +80,26 @@
         days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds";
     }, 1000);
   </script>
+  <script>
+  // Scroll fade-in for photos
+  const photos = document.querySelectorAll('.photo-grid img');
+
+  function checkVisibility() {
+    const triggerBottom = window.innerHeight * 0.9;
+
+    photos.forEach(photo => {
+      const photoTop = photo.getBoundingClientRect().top;
+
+      if (photoTop < triggerBottom) {
+        photo.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('load', checkVisibility);
+</script>
+
 </body>
 
 
