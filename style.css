@@ -1,123 +1,66 @@
+/* =====================
+   BASE RESET
+===================== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Georgia", serif;
   text-align: center;
-  display: block;
-  background: linear-gradient(-45deg, #fbeaea, #fff0f5, #fff, #ffeef2);
+  background: linear-gradient(-45deg, #fbeaea, #fff0f5, #ffffff, #ffeef2);
   background-size: 400% 400%;
-  animation: gradientBG 5s ease infinite alternate;
+  animation: gradientBG 2s ease infinite alternate;
 }
 
+/* =====================
+   GRADIENT ANIMATION
+===================== */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
-
-
+/* =====================
+   LAYOUT
+===================== */
 .container {
   max-width: 600px;
-  padding: 20px;
   margin: 0 auto;
+  padding: 24px 20px 40px;
 }
 
-
+/* =====================
+   TYPOGRAPHY
+===================== */
 h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-#countdown {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-hr {
-  margin: 40px 0;
-  border: none;
-  height: 1px;
-  background: #ddd;
+  font-size: clamp(26px, 6vw, 42px);
+  line-height: 1.2;
+  margin-bottom: 12px;
 }
 
 h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
-section p {
+p {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
+  margin-bottom: 18px;
 }
 
-.card {
-  background: #ffffff;
-  padding: 30px;
-  margin-top: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+/* =====================
+   COUNTDOWN + HEARTBEAT
+===================== */
+#countdown {
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  animation: heartbeat 1.5s infinite;
 }
-
-.card section {
-  margin-bottom: 25px;
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeInUp 1.2s ease forwards;
-}
-
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.photos {
-  margin-top: 50px;
-}
-
-.photo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-
-.photo-grid img {
-  width: 100%;
-  max-width: 250px; /* scales down naturally on mobile */
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-
-.photo-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-/* Scroll fade-in for individual photos */
-
-.photo-grid img.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
 @keyframes heartbeat {
   0% { transform: scale(1); }
@@ -127,113 +70,90 @@ section p {
   100% { transform: scale(1); }
 }
 
-#countdown {
-  display: inline-block;
-  animation: heartbeat 1.5s infinite;
+/* =====================
+   DIVIDERS
+===================== */
+hr {
+  margin: 32px 0;
+  border: none;
+  height: 1px;
+  background: #ddd;
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 768px) {
-
-  body {
-    padding: 20px;
-  }
-
-  .container {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  #countdown {
-    font-size: 22px;
-  }
-
-  .card {
-    padding: 20px;
-    margin-top: 30px;
-  }
-
-  .photos {
-    margin-top: 30px;
-  }
-
-  .photo-grid img {
-    width: 45%;
-    height: auto;
-  }
-
+/* =====================
+   CARD SECTIONS
+===================== */
+.card {
+  background: #ffffff;
+  padding: 24px;
+  margin-top: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+.card section {
+  margin-bottom: 22px;
+}
+
+/* =====================
+   DECORATIVE ICONS
+===================== */
+.decor {
+  font-size: 20px;
+  opacity: 0.6;
+  margin: 8px 0;
+}
+
+/* =====================
+   PHOTOS SECTION
+===================== */
+.photos {
+  margin-top: 40px;
+}
+
+/* STACKED SCROLL GALLERY */
+.photo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.photo-stack img {
+  width: 92%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* =====================
+   SIMPLE FADE-IN (OPTIONAL)
+===================== */
+.fade-in {
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   RESPONSIVE TWEAKS
+===================== */
 @media (max-width: 480px) {
-
-  h1 {
-    font-size: 28px;
+  .container {
+    padding: 20px 16px 32px;
   }
 
   #countdown {
     font-size: 18px;
   }
-
-  .photo-grid img {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-}
-
-h1 {
-  font-size: 36px;
-  line-height: 1.2;
-  margin-bottom: 15px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-.container, .card, .photos {
-  padding: 20px;
-  margin: 0 auto 30px auto;
-}
-
-section p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.photo-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* space between photos */
-  align-items: center;
-}
-
-.photo-stack img {
-  width: 90%;      /* responsive width on mobile */
-  max-width: 400px; /* reasonable max width for desktop */
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  opacity: 0;       /* for fade-in on scroll */
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.photo-stack img.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
