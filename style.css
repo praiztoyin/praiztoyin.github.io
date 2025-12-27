@@ -46,3 +46,15 @@ section p {
   font-size: 16px;
   line-height: 1.6;
 }
+
+.card {
+  background: #ffffff;
+  padding: 30px;
+  margin-top: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card section {
+  margin-bottom: 25px;
+}
