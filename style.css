@@ -29,3 +29,20 @@ p {
   font-size: 28px;
   font-weight: bold;
 }
+
+hr {
+  margin: 40px 0;
+  border: none;
+  height: 1px;
+  background: #ddd;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
