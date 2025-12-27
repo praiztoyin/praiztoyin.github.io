@@ -60,8 +60,10 @@ section p {
 }
 
 .fade-in {
+  opacity: 0;
   animation: fadeInUp 1.2s ease forwards;
 }
+
 
 @keyframes fadeInUp {
   from {
