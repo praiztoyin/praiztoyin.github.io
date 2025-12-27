@@ -113,3 +113,59 @@ section p {
   display: inline-block;
   animation: heartbeat 1.5s infinite;
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  #countdown {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .photos {
+    margin-top: 30px;
+  }
+
+  .photo-grid img {
+    width: 45%;
+    height: auto;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 28px;
+  }
+
+  #countdown {
+    font-size: 18px;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+}
