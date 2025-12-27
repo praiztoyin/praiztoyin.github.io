@@ -192,3 +192,30 @@ section p {
   }
 
 }
+
+h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.container, .card, .photos {
+  padding: 20px;
+  margin: 0 auto 30px auto;
+}
+
+section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
