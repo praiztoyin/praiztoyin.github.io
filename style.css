@@ -2,10 +2,19 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Georgia", serif;
-  background: linear-gradient(135deg, #fbeaea, #fff);
   text-align: center;
-  display: block; /* allow natural scrolling */
+  display: block;
+  background: linear-gradient(-45deg, #fbeaea, #fff0f5, #fff, #ffeef2);
+  background-size: 400% 400%;
+  animation: gradientBG 30s ease infinite;
 }
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 .container {
   max-width: 600px;
