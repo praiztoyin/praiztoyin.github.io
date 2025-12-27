@@ -101,6 +101,19 @@ section p {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
+/* Scroll fade-in for individual photos */
+.photo-grid img {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.photo-grid img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 @keyframes heartbeat {
   0% { transform: scale(1); }
   25% { transform: scale(1.05); }
