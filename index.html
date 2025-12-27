@@ -81,8 +81,9 @@
     }, 1000);
   </script>
   <script>
-  // Scroll fade-in for photos
-  const photos = document.querySelectorAll('.photo-grid img');
+ <script>
+  // Scroll fade-in for stacked photos
+  const photos = document.querySelectorAll('.photo-stack img');
 
   function checkVisibility() {
     const triggerBottom = window.innerHeight * 0.9;
@@ -99,6 +100,7 @@
   window.addEventListener('scroll', checkVisibility);
   window.addEventListener('load', checkVisibility);
 </script>
+
 
 </body>
 
