@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Praiz ❤️ Toyin</title>
-</head>
-<body>
+<h1>Praiz & Toyin</h1>
+<p>Counting down to August 4, 2029 💍</p>
 
-  <h1>Praiz & Toyin</h1>
-  <p>Counting down to August 4, 2029 💍</p>
+<h2 id="countdown">Loading countdown...</h2>
 
-</body>
-</html>
+<script>
+  const weddingDate = new Date("August 4, 2029 00:00:00").getTime();
+
+  setInterval(function () {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds";
+  }, 1000);
+</script>
